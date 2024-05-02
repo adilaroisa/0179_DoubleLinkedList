@@ -69,6 +69,13 @@ void addNode() {
     }
 }
 
+bool seacrh(int rollNo, Node** previous, Node** current)
+{
+    *previous = NULL;
+    *current = START;
+}
+
+
 
 
 
