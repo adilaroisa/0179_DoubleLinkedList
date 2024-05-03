@@ -44,7 +44,7 @@ void addNode() {
         Node* previous = NULL; // step 1.b: previous node is Null initially
 
 
-        while (current != NULL && current->noMhs)
+        while (current != NULL && current->noMhs < newNode->noMhs)
         {                       // step 1.c: traverse the list to find the correct positionn
             previous = current; // step 1.d: move the previous to the current node
             current = current->next; // step 1.e: move the current to the next node
@@ -69,7 +69,7 @@ void addNode() {
     }
 }
 
-bool seacrh(int rollNo, Node** previous, Node** current)
+bool search(int rollNo, Node** previous, Node** current)
 {
     *previous = NULL;
     *current = START;
@@ -169,7 +169,7 @@ void revtraverse()
         while (currentNode != NULL)
         {
             cout << currentNode->noMhs << " " << currentNode->name << endl;
-            currentNode->prev;
+            currentNode = currentNode->prev;
         }
     }
 }
@@ -182,7 +182,7 @@ void searchData()
     }
     Node* prev, * curr;
     prev = curr = NULL;
-    cout << "\nEnter the roll number of the student whose record you want to searh: ";
+    cout << "\nEnter the roll number of the student whose record you want to search: ";
     int num;
     cin >> num;
     if (search(num, &prev, &curr) == false)
